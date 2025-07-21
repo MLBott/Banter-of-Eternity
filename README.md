@@ -18,6 +18,8 @@ Includes a web interface to:
 
 ### Installation
 
+After cloning the repo or downloading the zip file and extracting to a folder, Navigate to the folder:
+
 1. **Install dependencies:**
 
    ```bash
