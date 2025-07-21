@@ -225,10 +225,10 @@ The system makes 3 LLM API calls per vignette generation:
 
 - **Vignette generation**: ~3000-4000 tokens
 - **Summary creation**: ~1000-1500 tokens
-- **Crew update**: ~2000-3000 tokens
+- **Crew profile update**: ~2000-3000 tokens
 
-**Total cost per generation**: Approximately $0.15-0.25 (GPT-4 pricing)
-**Frequency**: Only when game activity is detected (not continuous)
+**Total cost per generation**: Approximately $0.05-0.07 (GPT-4.1 pricing)
+**Frequency**: Only after a configurable period, every 20 minutes by default (not continuous)
 
 ## 🎯 Features
 
