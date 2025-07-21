@@ -14,50 +14,39 @@ Includes a web interface to:
 - Python 3.8+
 - OpenAI API key
 - Pillars of Eternity II game files
+- Combat Log Explorer (Optional - For Combat Logs) - https://www.nexusmods.com/pillarsofeternity2/mods/103
 
 ### Installation
 
 1. **Install dependencies:**
 
    ```bash
-   pip install openai watchdog flask flask-cors
+   pip install -r requirements.txt
    ```
 
 2. **Configure your OpenAI API key:**
 
    - Edit `Config/config.json`
    - Replace the `llm_api_key` value with your actual OpenAI API key
+  
+3. **Add Companion Names to gameState.json**
 
-3. **Start the monitoring service:**
+   - Add your current companion names to Banter-of-Eternity/Input/gameState.json
+   - Add them under "active_members" or "side_members"
+   - Optionally, change your characters name from "Watcher" to your character's first name
+
+5. **Start the monitoring service:**
+
+   - Click start_game_save_monitor_web_page.bat to run the scripts OR
+
+   - You can also run them individually manually:
    ```bash
+   python game_save_monitor.py
    python start_vignette_service.py
+   python web_server.py
+
    ```
 
-## 📁 Folder Structure
-
-```
-WorldState/
-├── Input/                          # Source data
-│   ├── gameState.json              # Main game state
-│   ├── crew_details.json           # Crew relationships
-│   ├── vignette_themes.json        # Story themes
-│   └── CombatLogs/                 # Combat logs & summaries
-├── Processing/                     # Intermediate files
-│   ├── combat_summaries/           # Extracted combat summaries
-│   └── narrative_summaries/        # Story summaries
-├── Output/                         # Generated content
-│   ├── Vignettes/                  # Story vignettes (*.md)
-│   └── Archives/                   # Archived old content
-├── Config/                         # Configuration
-│   ├── config.json                 # Main settings
-│   └── last_execution.json         # Timing tracker
-├── Logs/                           # System logs
-│   ├── vignette_generator.log      # Main log
-│   └── error.log                   # Error log
-├── web_interface.html              # Web interface for browsing logs and vignettes
-├── web_server.py                   # Flask backend for web interface
-└── start_web_interface.py          # Script to launch the web interface
-```
 
 ## ⚙️ How It Works
 
@@ -137,7 +126,8 @@ Edit `Config/config.json` to customize:
 
 ### LLM Settings
 
-- `llm_model_name`: OpenAI model to use (default: "gpt-4")
+- `llm_api_key`: Enter your API key, with double quotes
+- `llm_model_name`: OpenAI model to use (default: "gpt-4.1")
 - `llm_temperature`: Creativity level (0.0-1.0, default: 0.7)
 - `llm_max_tokens_vignette`: Max length for vignettes (default: 4000)
 
