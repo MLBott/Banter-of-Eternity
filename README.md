@@ -82,31 +82,21 @@ The system runs continuously and generates vignettes when:
 
 ### Running the Service
 
+Click start_game_save_monitor_web_page.bat to run the scripts OR
+
+
+You can also run the scripts manually:
 ```bash
+# Start game save monitoring
+python game_save_monitor.py
+
 # Start continuous monitoring
 python start_vignette_service.py
 
 # Generate vignette immediately (manual trigger)
 python generate_vignette_now.py
-
-# Run tests
-python test_vignette_generator.py
 ```
 
-### Integration with Game Save Monitor
-
-The system works alongside the existing game save monitor. To set up the complete pipeline:
-
-1. Run the game save monitor to process combat logs:
-
-   ```bash
-   python game_save_monitor.py
-   ```
-
-2. Start the vignette generator:
-   ```bash
-   python start_vignette_service.py
-   ```
 
 ### Using the Web Interface
 
