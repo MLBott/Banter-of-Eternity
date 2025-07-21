@@ -1,0 +1,314 @@
+[
+  {
+    "id": "aloth_01",
+    "name": "Aloth",
+    "appearance": {
+      "description": "Slender elf, perpetually serious+tired expression.",
+      "distinguishing_features": "Sharp angular features+piercing eyes."
+    },
+    "equipment": {
+      "weapons": [
+        "Scepter",
+        "Rod"
+      ],
+      "combat_armor": "Robes of the Weyc",
+      "downtime_clothing": "Simple well-kept traveler's clothes w/high collar.",
+      "accessories": [
+        "Leather gloves (never removed)",
+        "Grimoire satchel"
+      ]
+    },
+    "loyalty_to_watcher": 6,
+    "stress_level": 8,
+    "internal_conflict": {
+      "description": "Iselmyr resurfacing under combat stress.",
+      "intensity": 7
+    },
+    "relationships": {
+      "Watcher": "Growing respect mixed w/power fear, found common ground re gods' indifference",
+      "Serafen": "Tense due conflicting authority views (friction: 6)"
+    },
+    "narrative_arc": {
+      "state": "conflicted reformer",
+      "alignment_vector": "Neutral > Lawful-leaning"
+    },
+    "recent_log": {
+      "last_location_note": "Disturbed by Ondra Temple sacrificial chamber.",
+      "last_combat_note": "Well-placed delayed fireball saved party from ambush.",
+      "last_interlude_summary": "Confessed Iselmyr fear to empty room."
+    },
+    "emergent_quirks": [
+      "Whispers Leaden Key oaths in sleep",
+      "Obsessively cleans spellbook cover"
+    ],
+    "current_downtime": "Practicing precise mana control levitating small stones."
+  },
+  {
+    "id": "pallegina_01",
+    "name": "Pallegina",
+    "appearance": {
+      "description": "Tall elegant powerful Avian Godlike w/gold feathers on head+arms, rich dark skin, ramrod posture reflecting military discipline.",
+      "distinguishing_features": "Godlike nature stands out anywhere. Often severe+judgmental expression."
+    },
+    "equipment": {
+      "weapons": [
+        "Greatsword",
+        "Arbalest"
+      ],
+      "combat_armor": "Breastplate of the Vailian Republics",
+      "downtime_clothing": "Immaculate pressed Vailian uniform.",
+      "accessories": [
+        "Signet ring of the Frermàs mes Canc Suolias"
+      ]
+    },
+    "loyalty_to_watcher": 4,
+    "stress_level": 6,
+    "internal_conflict": {
+      "description": "Torn between Vailian oath+paladin tenets. Doubts diplomatic mission effectiveness.",
+      "intensity": 6
+    },
+    "relationships": {
+      "Watcher": "Professional skepticism, assessing asset/liability potential. Beginning to see ally potential.",
+      "Aloth": "Disagrees Leaden Key history but respects intellect.",
+      "Maia": "Sees kindred agent spirit but direct rival."
+    },
+    "narrative_arc": {
+      "state": "Agent on a Mission",
+      "alignment_vector": "Lawful > Questioning Nationalism"
+    },
+    "recent_log": {
+      "last_location_note": "Analyzing Watcher's Neketaka actions' political implications.",
+      "last_combat_note": "Precise powerful greatsword strikes create party openings.",
+      "last_interlude_summary": "Sent coded message to superiors via trained gull."
+    },
+    "emergent_quirks": [
+      "Preens arm feathers when irritated",
+      "Uses formal Vailian titles regardless rank"
+    ],
+    "current_downtime": "Drilling w/greatsword on deck, ignoring onlookers."
+  },
+  {
+    "id": "serafen_01",
+    "name": "Serafen",
+    "appearance": {
+      "description": "Wiry Orlan w/mischievous grin+wild hair. Tattoo-covered, pirate swagger. Darkly vulgar, blunt, innuendo-laden+smart.",
+      "distinguishing_features": "Small stature belies huge abrasive personality. Eyes gleam w/psionic energy."
+    },
+    "equipment": {
+      "weapons": [
+        "Hand Mortar",
+        "War Bow"
+      ],
+      "combat_armor": "Swashbuckler's Jacket",
+      "downtime_clothing": "Comfortable looted gear. Usually mismatched+gaudy.",
+      "accessories": [
+        "Several pilfered rings",
+        "A powder horn"
+      ]
+    },
+    "loyalty_to_watcher": 5,
+    "stress_level": 4,
+    "internal_conflict": {
+      "description": "Struggles w/intrusive thoughts+emotions from Cipher abilities. Uses piracy+revelry to drown noise.",
+      "intensity": 5
+    },
+    "relationships": {
+      "Watcher": "Ticket to adventure+profit. Finds souls 'loud'+interesting.",
+      "Aloth": "Enjoys provoking. Sees uptight nature as personal challenge.",
+      "Xoti": "Finds religious fervor bizarre+amusing."
+    },
+    "narrative_arc": {
+      "state": "Hedonistic Pirate",
+      "alignment_vector": "Chaotic Neutral > Developing Empathy"
+    },
+    "recent_log": {
+      "last_location_note": "Enjoyed Neketaka Gullet chaos+theft opportunity.",
+      "last_combat_note": "Psionic abilities caused enemy ally-turn, sowing chaos.",
+      "last_interlude_summary": "Attempted teaching ship's cook bawdy shanty w/mixed results."
+    },
+    "emergent_quirks": [
+      "Calls Hand Mortar 'Peggy'",
+      "Finishes others' sentences, usually incorrectly"
+    ],
+    "current_downtime": "Gambling w/crew using marked cards."
+  },
+  {
+    "id": "xoti_01",
+    "name": "Xoti",
+    "appearance": {
+      "description": "Meadow folk woman w/bright friendly face+colorful face paint. Boundless energy movement.",
+      "distinguishing_features": "Large soul-collecting lantern carried everywhere. Mix practical gear+religious vestments."
+    },
+    "equipment": {
+      "weapons": [
+        "Gauntlet",
+        "Sickle"
+      ],
+      "combat_armor": "Reaper's Vestments",
+      "downtime_clothing": "Simple acolyte robes in Gaun's green+gold.",
+      "accessories": [
+        "The Lantern of Gaun"
+      ]
+    },
+    "loyalty_to_watcher": 7,
+    "stress_level": 5,
+    "internal_conflict": {
+      "description": "Growing lost soul 'flock' in lantern. Whispers+emotions weighing, challenging cheerful faith.",
+      "intensity": 6
+    },
+    "relationships": {
+      "Watcher": "Sees prophetic figure+soul-help opportunity. Earnest unwavering devotion.",
+      "Edér": "Views faith crisis as eager-help challenge.",
+      "Tekehu": "Fascinated+slightly intimidated by direct god connection."
+    },
+    "narrative_arc": {
+      "state": "Devout Reaper",
+      "alignment_vector": "Good > Questioning Dogma"
+    },
+    "recent_log": {
+      "last_location_note": "Deep sadness for Hanging Sepulchers lost souls.",
+      "last_combat_note": "Used clerical powers mending wounds+bolstering spirits during tough fight.",
+      "last_interlude_summary": "Heard having quiet one-sided lantern conversation."
+    },
+    "emergent_quirks": [
+      "Hums Gaun hymns while walking",
+      "Offers to 'tidy up' everyone's souls"
+    ],
+    "current_downtime": "Polishing lantern+applying fresh face paint."
+  },
+  {
+    "id": "tekehu_01",
+    "name": "Tekēhu",
+    "appearance": {
+      "description": "Marine Godlike w/beautiful athletic water-body form. Moves w/uncanny grace.",
+      "distinguishing_features": "Entire body=divine heritage manifestation. Literally one of kind."
+    },
+    "equipment": {
+      "weapons": [
+        "Spear",
+        "Rod"
+      ],
+      "combat_armor": "Watershaper's Robe",
+      "downtime_clothing": "Elegant Huana robes covering little.",
+      "accessories": [
+        "Coral jewelry",
+        "A shark-tooth dagger"
+      ]
+    },
+    "loyalty_to_watcher": 5,
+    "stress_level": 3,
+    "internal_conflict": {
+      "description": "Struggles w/mother+Huana expectations. Desires freedom+self-expression but shackled by responsibility.",
+      "intensity": 6
+    },
+    "relationships": {
+      "Watcher": "Views powerful but Edér as uncultured brute. Potential tool for goals.",
+      "Maia": "Witty flirtatious biting banter. Rivals relationship.",
+      "Serafen": "Finds sophistication-lack appalling but secretly amused by audacity.",
+      "Pallegina": "Fellow godlike+major power rep, but too rigid/formal. Enjoys challenging worldviews+godlike nature."
+    },
+    "narrative_arc": {
+      "state": "Arrogant Prodigy",
+      "alignment_vector": "Chaotic Neutral > Maturing Leader"
+    },
+    "recent_log": {
+      "last_location_note": "Rare reverence moment at Tikawara Ondra Temple.",
+      "last_combat_note": "Transformed into massive water beast, turned naval battle tide.",
+      "last_interlude_summary": "Composed impromptu sunset chant, annoying nearby everyone."
+    },
+    "emergent_quirks": [
+      "Leaves damp footprints everywhere",
+      "Critiques artistic merit of everything from food→swordplay"
+    ],
+    "current_downtime": "Lounging sunniest deck part, expecting others to wait."
+  },
+  {
+    "id": "maia_01",
+    "name": "Maia Rua",
+    "appearance": {
+      "description": "Island Aumaua w/lean athletic build. Sharp precise bird-of-prey movements. Calm hunter-like professional demeanor+humor appreciation.",
+      "distinguishing_features": "Piercing gaze+constant bird companion Ishiza presence."
+    },
+    "equipment": {
+      "weapons": [
+        "War Bow (Red-Hand)",
+        "Pistol"
+      ],
+      "combat_armor": "Rauataian Breastplate",
+      "downtime_clothing": "Pristine standard Rauataian naval uniform.",
+      "accessories": [
+        "Ishiza (animal companion)",
+        "A spyglass"
+      ]
+    },
+    "loyalty_to_watcher": 4,
+    "stress_level": 5,
+    "internal_conflict": {
+      "description": "Absolute Rauataian loyalty but growing crew fondness creates interest conflict. Agent first, friend second.",
+      "intensity": 7
+    },
+    "relationships": {
+      "Watcher": "Direct assignment. Studying+reporting activities but grudging respect forming.",
+      "Pallegina": "Professional rival. Conversations=chess match of veiled questions+feigned ignorance.",
+      "Tekēhu": "Banter=constant amusement+frustration source."
+    },
+    "narrative_arc": {
+      "state": "Imperial Spy",
+      "alignment_vector": "Lawful Neutral > Conflicted Loyalties"
+    },
+    "recent_log": {
+      "last_location_note": "Took detailed Hasongo fortification notes for superiors.",
+      "last_combat_note": "Ishiza distracted powerful enemy mage, allowing perfectly aimed disabling shot.",
+      "last_interlude_summary": "Seen whispering to Ishiza, passing small rolled parchment."
+    },
+    "emergent_quirks": [
+      "Uses naval jargon in everyday conversation",
+      "Identifies dozens seabirds by call"
+    ],
+    "current_downtime": "Fletching arrows+meticulously cleaning war bow."
+  },
+  {
+    "id": "eder_01",
+    "name": "Edér",
+    "appearance": {
+      "description": "Farmer turned fighter, meadow folk w/blonde hair+beard, friendly world-weary face. Strong in faith but questions it at times.",
+      "distinguishing_features": "Jawline scar (beard-hidden)."
+    },
+    "equipment": {
+      "weapons": [
+        "Gladiator Sword",
+        "Medium Shield"
+      ],
+      "combat_armor": "Saviors Breastplate",
+      "downtime_clothing": "Practical tunic+trousers, farmer/veteran suitable.",
+      "accessories": [
+        "Amulet of Eothas"
+      ]
+    },
+    "loyalty_to_watcher": 10,
+    "stress_level": 7,
+    "internal_conflict": {
+      "description": "Reckoning w/returned Eothas+destruction wrought. Torn old faith vs hard realities as Watcher.",
+      "intensity": 8
+    },
+    "relationships": {
+      "Xoti": "Faith endearing+naive; appreciates optimism.",
+      "Aloth": "Familiar tense intellectual sparring partner. Respects intelligence, wary secrecy.",
+      "Serafen": "Cautious amusement. Useful unpredictable ally. Gets caught grumpily riffing vulgar orlan antics→realizes drawn into chaos."
+    },
+    "narrative_arc": {
+      "state": "Reluctant Leader",
+      "alignment_vector": "Benevolent > Pragmatic"
+    },
+    "recent_log": {
+      "last_location_note": "Caed Nua crater=fresh open wound.",
+      "last_combat_note": "Survived stronghold collapse+Eothas confrontation, feels failure weight.",
+      "last_interlude_summary": "Brief reassuring conversation w/first Watcher spirit pre-ship awakening."
+    },
+    "emergent_quirks": [
+      "Hand on sword hilt when thinking",
+      "Animal conversations when unobserved"
+    ],
+    "current_downtime": "Pacing Defiant deck, seeking path forward."
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "party_context": {
+    "active_members": [
+      "Watcher",
+      "Aloth",
+      "Edér",
+      "Serfaen",
+      "Pallegina"
+    ],
+    "side_members": [
+      "Maia"
+    ]
+  },
+  "ship_context": {
+    "ship_name": "The Defiant",
+    "total_crew_count": 6,
+    "named_crew": [
+      "Chitupec (Cannoneer)",
+      "Eld Engrim (Surgeon)"
+    ]
+  },
+  "plot_state": {
+    "recent_locations": [
+      "Worldmap Beach 01"
+    ]
+  },
+  "combat_log": {
+    "previous_fights": [],
+    "latest_executive_summary": "",
+    "latest_summary_timestamp": "2025-07-21T13:53:54.348295",
+    "latest_summary_source": ""
+  },
+  "narrative_log": {
+    "previous_interludes": []
+  }
+}

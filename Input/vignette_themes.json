@@ -1,0 +1,316 @@
+{
+  "scene_tropes": [
+    {
+      "category": "Daily Rhythms & Group Living",
+      "description": "The texture of shared life - showing what it actually feels like to live, travel, and work together as a found family.",
+      "details": [
+        {
+          "title": "Found Family Routine",
+          "description": "Low-stakes domestic moments revealing quirks and habits during downtime. Characters cook meals, maintain equipment, argue over chores, creating authentic cohabitation dynamics that show what being part of this group actually feels like.",
+          "is_new": false
+        },
+        {
+          "title": "The Shared Meal",
+          "description": "Characters bond over food across cultures and species, triggering traditions, confessions, or arguments. Eating rituals highlight group cohesion while anchoring speculative elements in deeply relatable acts of sharing sustenance.",
+          "is_new": false
+        },
+        {
+          "title": "Morning/Evening Rituals",
+          "description": "Personal routines observed by others - meditation, equipment maintenance, exercise regimens. Shows individual personalities within group context while building familiarity and comfort through repeated, intimate glimpses of daily habits.",
+          "is_new": true
+        },
+        {
+          "title": "Space Management Conflicts",
+          "description": "Arguments over shared living areas - who gets the good bunk, hogging the bathroom, leaving equipment everywhere. Realistic friction that grounds fantastic settings in relatable domestic annoyances.",
+          "is_new": true
+        },
+        {
+          "title": "Duty Roster Grumbling",
+          "description": "Complaints about assigned tasks - night watch, cooking duty, ship maintenance. Shows group organization while highlighting personality differences through how characters approach responsibilities and fairness.",
+          "is_new": true
+        }
+      ]
+    },
+    {
+      "category": "Social Dynamics & Communication",
+      "description": "The art of conversation and social navigation within extraordinary circumstances.",
+      "details": [
+        {
+          "title": "Awkward Small Talk with Sci-Fi Twist",
+          "description": "Stilted chitchat made surreal by setting - discussing weather on lava moons, complimenting tentacles. Highlights social discomfort amid galactic wonder, mirroring real-world banality made beautifully strange.",
+          "is_new": false
+        },
+        {
+          "title": "Gossiping About Extraordinary Events",
+          "description": "Idle chatter about sorcerers, scandals, and failed empires. Delivers exposition organically while reinforcing that life, even amid gods and galactic empires, still includes petty curiosity and social speculation.",
+          "is_new": false
+        },
+        {
+          "title": "Fish Out of Water",
+          "description": "Cultural outsiders fumble social norms - misreading etiquette, offending nobles, struggling with voice-activated doors. Provides humor while revealing world rules organically through genuine confusion and cultural clash.",
+          "is_new": false
+        },
+        {
+          "title": "Translation Mishaps",
+          "description": "Misunderstandings due to language barriers, cultural idioms, or universal translator glitches. Creates comedy while exploring how different species or cultures conceptualize basic ideas and social interactions.",
+          "is_new": true
+        },
+        {
+          "title": "Generational Gap Moments",
+          "description": "Characters from different eras or lifespans clash over values, technology use, or cultural references. Time travelers, immortals, and mortals navigate different perspectives on progress and tradition.",
+          "is_new": true
+        }
+      ]
+    },
+    {
+      "category": "Entertainment & Competition",
+      "description": "How groups have fun together and what games reveal about character.",
+      "details": [
+        {
+          "title": "Party Games with High Stakes",
+          "description": "Familiar games with speculative twists - psychic poker, alien riddles, VR charades with real consequences. Combines fun with tension while showcasing world technologies through competitive, character-revealing formats.",
+          "is_new": false
+        },
+        {
+          "title": "Impromptu Competitions",
+          "description": "Spontaneous contests using abilities or skills - who can lift the heaviest object, fastest hacking, most creative spell. Reveals hierarchy, hidden talents, and competitive dynamics without formal structure.",
+          "is_new": true
+        },
+        {
+          "title": "Teaching Games",
+          "description": "One character teaches others their culture's entertainment - card games, sports, puzzles. Shows cultural exchange while highlighting patience, learning styles, and how play differs across societies.",
+          "is_new": true
+        },
+        {
+          "title": "Betting Pools",
+          "description": "Characters wager on outcomes - mission success, romantic developments, who'll mess up next. Creates investment in events while showing group dynamics and individual risk tolerance.",
+          "is_new": true
+        }
+      ]
+    },
+    {
+      "category": "Altered States & Philosophical Exploration",
+      "description": "Deep conversations and intellectual bonding through shared experiences.",
+      "details": [
+        {
+          "title": "Drunken Philosophical Debates",
+          "description": "Loosened by alcohol or equivalents, characters air beliefs about AI ethics, destiny versus free will, or whether the AI bartender counts as listening. Theme work through humanized combatants.",
+          "is_new": false
+        },
+        {
+          "title": "The Philosophical Jam",
+          "description": "Characters collaboratively brainstorm complex problems, combining unique expertise to tackle thematic questions or metaphysical dilemmas in dynamic, conversational ways rather than through lectures or exposition.",
+          "is_new": false
+        },
+        {
+          "title": "Substance-Induced Bonding",
+          "description": "Shared experiences with alien drugs, magical potions, or psychic enhancement create vulnerability and honesty. Characters lower guards, leading to authentic connection or embarrassing revelations.",
+          "is_new": true
+        },
+        {
+          "title": "Fever Dreams & Delirium",
+          "description": "Sick or injured characters ramble semi-coherently while others care for them. Reveals subconscious thoughts, fears, and relationships through stream-of-consciousness vulnerability that feels authentic and unguarded.",
+          "is_new": true
+        }
+      ]
+    },
+    {
+      "category": "Relationship Development & Intimacy",
+      "description": "The evolution of connections between specific characters.",
+      "details": [
+        {
+          "title": "Bonding/Relationship Building",
+          "description": "Characters strengthen connections through shared experiences outside major plot points. Quality time developing interpersonal chemistry, trust, and understanding that defines evolving relationships through organic interaction.",
+          "is_new": false
+        },
+        {
+          "title": "Confession/Vulnerability",
+          "description": "Secrets slip out - trauma, fear, affection, regret. Quiet, personal, raw moments often contrasting with the world's epic scale. Who characters open up to defines trust dynamics.",
+          "is_new": false
+        },
+        {
+          "title": "Quiet Connection",
+          "description": "Wordless understanding - stargazing together, fixing armor side by side, sitting back-to-back. Emotional pauses that whisper rather than shout about relationship depth through subtle, meaningful presence.",
+          "is_new": false
+        },
+        {
+          "title": "Accidental Proximity",
+          "description": "Physical closeness due to spatial constraints - tight quarters, shared bunks, collapsed passages. Creates romantic or platonic tension through forced intimacy, letting body language carry emotional weight.",
+          "is_new": false
+        },
+        {
+          "title": "The Seduction",
+          "description": "One character tests romantic waters, revealing more about baggage than intentions. In speculative settings, highlights cultural mismatch, unique taboos, or alien understandings of intimacy and attraction.",
+          "is_new": false
+        },
+        {
+          "title": "Relationship Check-ins",
+          "description": "Characters directly discuss where they stand with each other - friendship boundaries, romantic interest, family dynamics. Mature communication that prevents misunderstandings while deepening authentic connection.",
+          "is_new": true
+        }
+      ]
+    },
+    {
+      "category": "Conflict & Tension",
+      "description": "Realistic friction and disagreement that tests relationships.",
+      "details": [
+        {
+          "title": "The Heated Argument",
+          "description": "Clashes over tactics, morals, or personal wounds expose ideological divides or unresolved backstory. High-tension scenes that fracture party unity believably without destroying group cohesion.",
+          "is_new": false
+        },
+        {
+          "title": "Ideological Clash",
+          "description": "Characters representing different core beliefs engage in fundamental disagreements highlighting story's central moral, political, or philosophical conflicts through personal investment rather than abstract debate.",
+          "is_new": false
+        },
+        {
+          "title": "Passive-Aggressive Warfare",
+          "description": "Subtle hostility through pointed comments, cold shoulders, or deliberate incompetence. Realistic interpersonal tension that simmers beneath surface civility, building toward eventual confrontation or resolution.",
+          "is_new": true
+        },
+        {
+          "title": "Territory Disputes",
+          "description": "Arguments over personal space, equipment ownership, or leadership roles. Practical conflicts that reveal deeper insecurities and power dynamics within group structure.",
+          "is_new": true
+        }
+      ]
+    },
+    {
+      "category": "Performance & Social Roles",
+      "description": "How characters present themselves and navigate social expectations.",
+      "details": [
+        {
+          "title": "Save the Cat Moment",
+          "description": "Small acts of kindness earning audience sympathy - helping someone undeserving or helpless. Specifically designed to make characters likable through proactive goodness rather than reactive heroism.",
+          "is_new": false
+        },
+        {
+          "title": "Social Masquerade",
+          "description": "Characters adopt false personas for infiltration or diplomacy, with party members coaching behavior. Shows adaptability while creating comedy through poor acting or cultural misunderstandings.",
+          "is_new": true
+        },
+        {
+          "title": "Impression Management",
+          "description": "Characters try to appear competent, tough, or desirable to impress others. Universal human behavior complicated by supernatural abilities or alien social structures, creating authentic insecurity.",
+          "is_new": true
+        },
+        {
+          "title": "Mentorship Moments",
+          "description": "Experienced characters guide newcomers through skills, culture, or emotional challenges. Shows wisdom transfer while revealing teaching styles and patience levels through practical, everyday instruction.",
+          "is_new": true
+        }
+      ]
+    },
+    {
+      "category": "Memory & Identity Exploration",
+      "description": "Understanding who characters are and where they come from.",
+      "details": [
+        {
+          "title": "Backstory Revelation",
+          "description": "Past events emerge through natural conversation or triggered memories, explaining motivations without feeling forced. Provides character context while maintaining present-moment engagement through emotional relevance.",
+          "is_new": false
+        },
+        {
+          "title": "Cultural Sharing",
+          "description": "Characters explain traditions, holidays, or customs from their backgrounds. Natural worldbuilding through personal history, showing how different societies approach universal human experiences like celebration or mourning.",
+          "is_new": true
+        },
+        {
+          "title": "Skill Origin Stories",
+          "description": "How characters learned their abilities - training montages, embarrassing first attempts, influential teachers. Humanizes extraordinary capabilities through relatable learning experiences and personal growth.",
+          "is_new": true
+        }
+      ]
+    },
+    {
+      "category": "Processing & Healing",
+      "description": "How characters handle difficult emotions and traumatic experiences.",
+      "details": [
+        {
+          "title": "Mourning/Grief Scene",
+          "description": "Reactions to loss - death, betrayal, departure. Each character grieves differently, exposing inner landscapes through raw emotion, meaningful silence, or avoidance behaviors that shift group dynamics.",
+          "is_new": false
+        },
+        {
+          "title": "Trauma Processing",
+          "description": "Characters work through difficult experiences with support from others. Shows healing as ongoing process rather than instant resolution, highlighting different coping mechanisms and support styles.",
+          "is_new": true
+        },
+        {
+          "title": "Guilt Reconciliation",
+          "description": "Characters address past mistakes or moral failures with affected parties. Explores forgiveness, accountability, and relationship repair through authentic emotional work rather than simple apologies.",
+          "is_new": true
+        }
+      ]
+    },
+    {
+      "category": "Leadership & Decision Making",
+      "description": "How groups organize themselves and handle authority.",
+      "details": [
+        {
+          "title": "Judgment Scene",
+          "description": "Leaders formally decide disputes, weighing conflicting counsel from party members. Explores authority burdens and choice consequences while highlighting different advisory approaches and moral frameworks.",
+          "is_new": false
+        },
+        {
+          "title": "Democratic Deliberation",
+          "description": "Group votes on important decisions, revealing individual values and coalition-building. Shows collaborative decision-making while creating tension through competing interests and compromise necessity.",
+          "is_new": true
+        },
+        {
+          "title": "Authority Challenges",
+          "description": "Characters question leadership decisions or propose alternative approaches. Tests group hierarchy while allowing character growth and preventing stagnation in established power dynamics.",
+          "is_new": true
+        }
+      ]
+    },
+    {
+      "category": "Preparation & Anticipation",
+      "description": "Getting ready for what comes next.",
+      "details": [
+        {
+          "title": "Calm Before the Storm",
+          "description": "Peaceful moments before danger - sharpening blades, writing letters, sitting in contemplative silence. Provides emotional breathing room while highlighting unspoken fears and cementing loyalty.",
+          "is_new": false
+        },
+        {
+          "title": "Gearing Up/Preparation",
+          "description": "Collective rituals before high-stakes events - packing weapons, tuning mechs, enchanting gear. Builds tension while revealing character prep styles, fears, and role associations within group structure.",
+          "is_new": false
+        },
+        {
+          "title": "Strategy Sessions",
+          "description": "Planning future actions through collaborative problem-solving. Shows different thinking styles and expertise areas while building anticipation for coming challenges through tactical discussion.",
+          "is_new": true
+        },
+        {
+          "title": "Divination & Fortune Telling",
+          "description": "Characters seek glimpses of the future through magical or technological means. Creates anticipation while revealing hopes, fears, and attitudes toward fate versus free will.",
+          "is_new": true
+        }
+      ]
+    },
+    {
+      "category": "Problem Solving & Cooperation",
+      "description": "Working together on practical challenges.",
+      "details": [
+        {
+          "title": "Technical Troubleshooting",
+          "description": "Characters collaborate to fix broken equipment, solve puzzles, or understand alien technology. Shows different expertise areas and working styles while creating natural tension through time pressure.",
+          "is_new": true
+        },
+        {
+          "title": "Resource Management",
+          "description": "Decisions about supplies, money, or limited magical components. Creates realistic scarcity tension while revealing character priorities and attitudes toward sharing versus hoarding.",
+          "is_new": true
+        },
+        {
+          "title": "Information Sharing",
+          "description": "Characters compare notes, share discoveries, or piece together mysteries collaboratively. Natural exposition delivery through character knowledge combination and deductive reasoning processes.",
+          "is_new": true
+        }
+      ]
+    }
+  ]
+}

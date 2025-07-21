@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pillars of Eternity II - Vignette Generator Interface</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap");
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Libre Baskerville", "Georgia", serif;
+        background: linear-gradient(135deg, #2c1810, #1a0f0a, #3d2817);
+        background-attachment: fixed;
+        color: #d4c4a8;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+            circle at 20% 80%,
+            rgba(139, 69, 19, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(160, 82, 45, 0.08) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 40% 40%,
+            rgba(101, 67, 33, 0.05) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .header {
+        background: linear-gradient(90deg, #3d2817, #2c1810, #4a2f1a);
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+        border-bottom: 2px solid #8b5a2b;
+        position: relative;
+      }
+
+      .header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, #d4af37, transparent);
+      }
+
+      .header h1 {
+        font-family: "Cinzel", serif;
+        color: #d4af37;
+        font-size: 28px;
+        font-weight: 600;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8),
+          0 0 10px rgba(212, 175, 55, 0.3);
+        letter-spacing: 2px;
+      }
+
+      .main-container {
+        display: flex;
+        flex: 1;
+        gap: 20px;
+        padding: 20px;
+        overflow: hidden;
+      }
+
+      .panel {
+        background: rgba(60, 40, 25, 0.85);
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
+          inset 0 1px 0 rgba(212, 175, 55, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(139, 90, 43, 0.3);
+        position: relative;
+      }
+
+      .panel::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(212, 175, 55, 0.4),
+          transparent
+        );
+      }
+
+      .left-panel {
+        width: 15%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-height: calc(100vh - 140px);
+      }
+
+      .combat-logs,
+      .vignette-list {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+      }
+
+      .panel-title {
+        font-family: "Cinzel", serif;
+        color: #d4af37;
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 15px;
+        text-align: center;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        letter-spacing: 1px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .panel-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #d4af37, transparent);
+      }
+
+      .content-list {
+        flex: 1;
+        overflow-y: auto;
+        border: 2px solid rgba(139, 90, 43, 0.4);
+        border-radius: 8px;
+        padding: 8px;
+        background: rgba(28, 18, 10, 0.7);
+        position: relative;
+      }
+
+      .content-list::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+            180deg,
+            rgba(212, 175, 55, 0.05) 0%,
+            transparent 3%
+          ),
+          linear-gradient(0deg, rgba(212, 175, 55, 0.05) 0%, transparent 3%);
+        pointer-events: none;
+        border-radius: 6px;
+      }
+
+      .list-item {
+        padding: 12px 15px;
+        margin: 4px 0;
+        background: rgba(70, 45, 25, 0.6);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-left: 4px solid transparent;
+        font-size: 14px;
+        font-family: "Crimson Text", serif;
+        position: relative;
+        border: 1px solid rgba(139, 90, 43, 0.2);
+      }
+
+      .list-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 55, 0.05),
+          transparent
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: 8px;
+      }
+
+      .list-item:hover::before {
+        opacity: 1;
+      }
+
+      .list-item:hover {
+        background: rgba(90, 55, 35, 0.8);
+        border-left-color: #d4af37;
+        transform: translateX(2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3),
+          inset 0 1px 0 rgba(212, 175, 55, 0.2);
+      }
+
+      .list-item.selected {
+        background: rgba(120, 75, 45, 0.9);
+        border-left-color: #d4af37;
+        border-color: rgba(212, 175, 55, 0.4);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4),
+          inset 0 1px 0 rgba(212, 175, 55, 0.3);
+      }
+
+      .list-item.selected::before {
+        opacity: 1;
+      }
+
+      .combat-item {
+        border-left-color: #c17c74;
+      }
+
+      .combat-item:hover,
+      .combat-item.selected {
+        border-left-color: #d4876e;
+      }
+
+      .list-item .item-title {
+        font-weight: 600;
+        color: #e8d5b7;
+        margin-bottom: 4px;
+      }
+
+      .list-item .item-subtitle {
+        font-size: 12px;
+        color: #b8a082;
+        font-style: italic;
+      }
+
+      .right-panel {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        max-height: calc(100vh - 140px);
+      }
+
+      .content-display {
+        flex: 1;
+        overflow-y: auto;
+        border: 2px solid rgb(255, 208, 55);
+        border-radius: 8px;
+        padding: 20px;
+        background: rgba(3, 2, 1, 0.7);
+        font-family: "Crimson Text", serif;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        font-size: 16px;
+        color: #e8d5b7;
+        position: relative;
+      }
+
+      .content-display::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+            180deg,
+            rgba(212, 175, 55, 0.03) 0%,
+            transparent 5%
+          ),
+          linear-gradient(0deg, rgba(212, 175, 55, 0.03) 0%, transparent 5%);
+        pointer-events: none;
+        border-radius: 6px;
+      }
+
+      .chat-container {
+        height: 220px;
+        display: flex;
+        flex-direction: column;
+        background: rgba(3, 2, 1, 0.7);
+        border-radius: 8px;
+        border: 2px solid rgba(139, 90, 43, 0.4);
+        position: relative;
+      }
+
+      .chat-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(212, 175, 55, 0.4),
+          transparent
+        );
+      }
+
+      .chat-input-container {
+        display: flex;
+        padding: 15px;
+        gap: 12px;
+        border-top: 1px solid rgb(255, 211, 91);
+        background: rgba(3, 2, 1, 0.7);
+        border-radius: 0 0 8px 8px;
+      }
+
+      .chat-input {
+        flex: 1;
+        padding: 12px 15px;
+        border: 2px solid rgba(139, 90, 43, 0.4);
+        border-radius: 6px;
+        background: rgba(3, 2, 1, 0.7);
+        color: #e8d5b7;
+        font-size: 14px;
+        font-family: "Crimson Text", serif;
+        transition: all 0.3s ease;
+      }
+
+      .chat-input:focus {
+        outline: none;
+        border-color: #d4af37;
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+      }
+
+      .chat-input::placeholder {
+        color: rgba(184, 160, 130, 0.6);
+        font-style: italic;
+      }
+
+      .send-btn {
+        padding: 12px 24px;
+        background: linear-gradient(135deg, #d4af37, #b8941f);
+        color: #2c1810;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        font-family: "Cinzel", serif;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3),
+          inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        letter-spacing: 0.5px;
+      }
+
+      .send-btn:hover {
+        background: linear-gradient(135deg, #e8c547, #d4af37);
+        transform: translateY(-1px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4),
+          inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      }
+
+      .send-btn:active {
+        transform: translateY(0);
+      }
+
+      .send-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .loading {
+        text-align: center;
+        color: #d4af37;
+        font-style: italic;
+        padding: 30px 20px;
+        font-family: "Crimson Text", serif;
+        font-size: 16px;
+        position: relative;
+      }
+
+      .loading::before {
+        content: "⚔";
+        position: absolute;
+        left: 50%;
+        top: 20px;
+        transform: translateX(-50%);
+        font-size: 20px;
+        animation: glow 2s ease-in-out infinite alternate;
+      }
+
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 5px #d4af37;
+        }
+        to {
+          text-shadow: 0 0 15px #d4af37, 0 0 25px #d4af37;
+        }
+      }
+
+      .error {
+        color: #d4876e;
+        background: rgba(196, 120, 110, 0.15);
+        padding: 15px;
+        border-radius: 8px;
+        margin: 10px 0;
+        border-left: 4px solid #d4876e;
+        font-family: "Crimson Text", serif;
+      }
+
+      .metadata {
+        background: rgba(212, 175, 55, 0.12);
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        border-left: 4px solid #d4af37;
+        font-family: "Crimson Text", serif;
+        color: #d4c4a8;
+      }
+
+      .metadata strong {
+        color: #d4af37;
+        font-weight: 600;
+      }
+
+      .interactive-badge {
+        background: linear-gradient(135deg, #6b8e6b, #4a7c59);
+        color: white;
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-size: 10px;
+        margin-left: 8px;
+        font-family: "Cinzel", serif;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Enhanced Scrollbar styling */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: rgba(40, 25, 15, 0.5);
+        border-radius: 6px;
+        border: 1px solid rgba(139, 90, 43, 0.2);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #8b5a2b, #654321);
+        border-radius: 6px;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        box-shadow: inset 0 1px 0 rgba(212, 175, 55, 0.2);
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, #a0662f, #7a4f26);
+        box-shadow: inset 0 1px 0 rgba(212, 175, 55, 0.3),
+          0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      ::-webkit-scrollbar-corner {
+        background: rgba(40, 25, 15, 0.5);
+      }
+
+      /* Fantasy decorative elements */
+      .fantasy-border {
+        position: relative;
+      }
+
+      .fantasy-border::before,
+      .fantasy-border::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: radial-gradient(circle, #d4af37 2px, transparent 2px),
+          radial-gradient(circle, rgba(212, 175, 55, 0.3) 8px, transparent 8px);
+      }
+
+      .fantasy-border::before {
+        top: -1px;
+        left: -1px;
+        border-radius: 0 0 20px 0;
+      }
+
+      .fantasy-border::after {
+        bottom: -1px;
+        right: -1px;
+        border-radius: 20px 0 0 0;
+      }
+
+      /* Combat log specific styling */
+      .combat-log-content {
+        font-family: "Crimson Text", serif;
+        white-space: pre-line;
+        line-height: 1.7;
+        color: #e8d5b7;
+      }
+
+      .combat-log-content strong {
+        color: #d4af37;
+        font-weight: 600;
+      }
+
+      /* Vignette content styling */
+      .vignette-content {
+        font-family: "Libre Baskerville", serif;
+        line-height: 1.8;
+        color: #e8d5b7;
+      }
+
+      .vignette-content h1 {
+        font-family: "Cinzel", serif;
+        color: #d4af37;
+        margin-bottom: 20px;
+        font-size: 24px;
+        text-align: center;
+      }
+
+      .vignette-content h2 {
+        font-family: "Cinzel", serif;
+        color: #d4af37;
+        margin: 20px 0 10px 0;
+        font-size: 18px;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 600px) {
+        .left-panel {
+          width: 20%;
+        }
+      }
+
+      @media (max-width: 1200px) {
+        .main-container {
+          flex-direction: column;
+          padding: 15px;
+        }
+
+        .left-panel {
+          width: 80%;
+          max-height: 300px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <svg
+        width="40"
+        height="40"
+        style="
+          position: absolute;
+          left: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+        "
+        viewBox="0 0 100 100"
+      >
+        <path
+          d="M50 10 L70 30 L50 50 L30 30 Z"
+          fill="none"
+          stroke="#d4af37"
+          stroke-width="2"
+        />
+        <circle cx="50" cy="30" r="8" fill="#d4af37" opacity="0.7" />
+        <path
+          d="M45 65 L55 65 M50 60 L50 85"
+          stroke="#d4af37"
+          stroke-width="2"
+        />
+        <path d="M40 75 L60 75" stroke="#d4af37" stroke-width="3" />
+      </svg>
+
+      <h1>⚔️ Pillars of Eternity II - Vignette Generator Interface ⚔️</h1>
+
+      <svg
+        width="40"
+        height="40"
+        style="
+          position: absolute;
+          right: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+        "
+        viewBox="0 0 100 100"
+      >
+        <path
+          d="M20 50 Q50 20 80 50 Q50 80 20 50"
+          fill="none"
+          stroke="#d4af37"
+          stroke-width="2"
+        />
+        <circle cx="35" cy="40" r="4" fill="#d4af37" />
+        <circle cx="65" cy="40" r="4" fill="#d4af37" />
+        <circle cx="50" cy="60" r="6" fill="#d4af37" opacity="0.7" />
+      </svg>
+    </div>
+
+    <div class="main-container">
+      <div class="left-panel">
+        <div class="combat-logs panel">
+          <div class="panel-title">
+            <svg
+              width="24"
+              height="24"
+              style="vertical-align: middle; margin-right: 8px"
+              viewBox="0 0 100 100"
+            >
+              <path
+                d="M20 20 L80 20 L70 40 L80 60 L20 60 L30 40 Z"
+                fill="none"
+                stroke="#d4af37"
+                stroke-width="3"
+              />
+              <path d="M40 30 L60 30" stroke="#d4af37" stroke-width="2" />
+              <circle cx="50" cy="45" r="3" fill="#d4af37" />
+            </svg>
+            Combat Logs
+          </div>
+          <div id="combatList" class="content-list">
+            <div class="loading">Loading combat logs...</div>
+          </div>
+        </div>
+
+        <div class="vignette-list panel">
+          <div class="panel-title">
+            <svg
+              width="24"
+              height="24"
+              style="vertical-align: middle; margin-right: 8px"
+              viewBox="0 0 100 100"
+            >
+              <path
+                d="M25 20 L75 20 L75 80 L25 80 Z"
+                fill="none"
+                stroke="#d4af37"
+                stroke-width="3"
+              />
+              <path
+                d="M35 30 L65 30 M35 40 L65 40 M35 50 L55 50"
+                stroke="#d4af37"
+                stroke-width="2"
+              />
+              <circle cx="30" cy="70" r="2" fill="#d4af37" />
+            </svg>
+            Story Vignettes
+          </div>
+          <div id="vignetteList" class="content-list">
+            <div class="loading">Loading vignettes...</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-panel panel">
+        <div class="panel-title">
+          <svg
+            width="24"
+            height="24"
+            style="vertical-align: middle; margin-right: 8px"
+            viewBox="0 0 100 100"
+          >
+            <path
+              d="M30 25 L70 25 L70 75 L30 75 Z"
+              fill="none"
+              stroke="#d4af37"
+              stroke-width="3"
+            />
+            <path
+              d="M25 30 L25 70 M75 30 L75 70"
+              stroke="#d4af37"
+              stroke-width="2"
+            />
+            <circle
+              cx="50"
+              cy="50"
+              r="8"
+              fill="none"
+              stroke="#d4af37"
+              stroke-width="2"
+            />
+            <path
+              d="M45 50 L55 50 M50 45 L50 55"
+              stroke="#d4af37"
+              stroke-width="2"
+            />
+          </svg>
+          Content Viewer
+        </div>
+        <div id="contentDisplay" class="content-display">
+          <div class="loading">
+            Select a combat log or vignette to view its content...
+          </div>
+        </div>
+
+        <div class="chat-container">
+          <div class="panel-title" style="padding: 15px; margin: 0">
+            <svg
+              width="20"
+              height="20"
+              style="vertical-align: middle; margin-right: 8px"
+              viewBox="0 0 100 100"
+            >
+              <path
+                d="M20 30 Q20 20 30 20 L70 20 Q80 20 80 30 L80 60 Q80 70 70 70 L40 70 L20 80 Z"
+                fill="none"
+                stroke="#d4af37"
+                stroke-width="3"
+              />
+              <circle cx="35" cy="45" r="3" fill="#d4af37" />
+              <circle cx="50" cy="45" r="3" fill="#d4af37" />
+              <circle cx="65" cy="45" r="3" fill="#d4af37" />
+            </svg>
+            Interactive Vignette Chat
+          </div>
+          <div class="chat-input-container">
+            <input
+              type="text"
+              id="chatInput"
+              class="chat-input"
+              placeholder="Type your response to continue the story..."
+              disabled
+            />
+            <button id="sendBtn" class="send-btn" disabled>Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let currentVignette = null;
+      let combatLogs = [];
+      let vignettes = [];
+      let interactiveVignettes = [];
+
+      // API endpoints (these would need to be implemented as a simple web server)
+      const API_BASE = "/api";
+
+      // Initialize the interface
+      async function init() {
+        await loadCombatLogs();
+        await loadVignettes();
+        setupEventListeners();
+      }
+
+      function setupEventListeners() {
+        document
+          .getElementById("chatInput")
+          .addEventListener("keypress", function (e) {
+            if (e.key === "Enter") {
+              sendChatMessage();
+            }
+          });
+
+        document
+          .getElementById("sendBtn")
+          .addEventListener("click", sendChatMessage);
+      }
+
+      async function loadCombatLogs() {
+        try {
+          const response = await fetch("/api/combat-logs");
+          const result = await response.json();
+
+          if (result.success) {
+            combatLogs = result.data;
+            displayCombatLogs();
+          } else {
+            throw new Error(result.error);
+          }
+        } catch (error) {
+          console.error("Failed to load combat logs:", error);
+          document.getElementById("combatList").innerHTML =
+            '<div class="error">Failed to load combat logs: ' +
+            error.message +
+            "</div>";
+        }
+      }
+
+      async function loadVignettes() {
+        try {
+          const response = await fetch("/api/vignettes");
+          const result = await response.json();
+
+          if (result.success) {
+            vignettes = result.data.filter((v) => !v.isInteractive);
+            interactiveVignettes = result.data.filter((v) => v.isInteractive);
+            displayVignettes();
+          } else {
+            throw new Error(result.error);
+          }
+        } catch (error) {
+          console.error("Failed to load vignettes:", error);
+          document.getElementById("vignetteList").innerHTML =
+            '<div class="error">Failed to load vignettes: ' +
+            error.message +
+            "</div>";
+        }
+      }
+
+      function displayCombatLogs() {
+        const container = document.getElementById("combatList");
+        container.innerHTML = "";
+
+        combatLogs.forEach((log, index) => {
+          const item = document.createElement("div");
+          item.className = "list-item combat-item fantasy-border";
+          item.innerHTML = `
+                    <div class="item-title">${log.location}</div>
+                    <div class="item-subtitle">${formatTimestamp(
+                      log.timestamp
+                    )}</div>
+                `;
+          item.onclick = () => selectCombatLog(index);
+          container.appendChild(item);
+        });
+      }
+
+      function displayVignettes() {
+        const container = document.getElementById("vignetteList");
+        container.innerHTML = "";
+
+        // Combine regular and interactive vignettes
+        const allVignettes = [...vignettes, ...interactiveVignettes];
+        allVignettes.sort(
+          (a, b) => new Date(b.timestamp) - new Date(a.timestamp)
+        );
+
+        allVignettes.forEach((vignette, index) => {
+          const item = document.createElement("div");
+          item.className = "list-item fantasy-border";
+          item.innerHTML = `
+                    <div class="item-title">
+                        ${vignette.theme || "Story Vignette"}
+                        ${
+                          vignette.isInteractive
+                            ? '<span class="interactive-badge">INTERACTIVE</span>'
+                            : ""
+                        }
+                    </div>
+                    <div class="item-subtitle">${formatTimestamp(
+                      vignette.timestamp
+                    )}</div>
+                `;
+          item.onclick = () => selectVignette(vignette);
+          container.appendChild(item);
+        });
+      }
+
+      function selectCombatLog(index) {
+        // Clear previous selections
+        document
+          .querySelectorAll(".list-item")
+          .forEach((item) => item.classList.remove("selected"));
+        document
+          .querySelectorAll(".combat-item")
+          [index].classList.add("selected");
+
+        const log = combatLogs[index];
+        const display = document.getElementById("contentDisplay");
+
+        display.innerHTML = `
+                <div class="metadata">
+                    <strong>⚔️ Location:</strong> ${log.location}<br>
+                    <strong>🕒 Timestamp:</strong> ${formatTimestamp(
+                      log.timestamp
+                    )}<br>
+                    <strong>📄 Source:</strong> ${log.name}
+                </div>
+                <div class="combat-log-content">
+                    ${log.summary}
+                </div>
+            `;
+
+        // Disable chat for combat logs
+        currentVignette = null;
+        updateChatState();
+      }
+
+      function selectVignette(vignette) {
+        // Clear previous selections
+        document
+          .querySelectorAll(".list-item")
+          .forEach((item) => item.classList.remove("selected"));
+
+        // Find and select the clicked item
+        const allVignettes = [...vignettes, ...interactiveVignettes];
+        const vignetteItems = document.querySelectorAll(
+          "#vignetteList .list-item"
+        );
+        const sortedVignettes = allVignettes.sort(
+          (a, b) => new Date(b.timestamp) - new Date(a.timestamp)
+        );
+        const index = sortedVignettes.findIndex(
+          (v) => v.timestamp === vignette.timestamp
+        );
+        if (vignetteItems[index]) {
+          vignetteItems[index].classList.add("selected");
+        }
+
+        const display = document.getElementById("contentDisplay");
+
+        // Format metadata based on vignette type
+        let metadataHtml = `
+                <div class="metadata">
+                    <strong>🎭 Theme:</strong> ${
+                      vignette.theme || "Story Vignette"
+                    }<br>
+                    <strong>🕒 Generated:</strong> ${formatTimestamp(
+                      vignette.timestamp
+                    )}<br>
+                    <strong>🔄 Type:</strong> ${
+                      vignette.isInteractive
+                        ? "Interactive Response"
+                        : "Scheduled Generation"
+                    }
+            `;
+
+        if (vignette.userPrompt) {
+          metadataHtml += `<br><strong>💬 User Prompt:</strong> "${vignette.userPrompt}"`;
+        }
+
+        metadataHtml += `</div>`;
+
+        display.innerHTML = `
+                ${metadataHtml}
+                <div class="vignette-content">
+                    ${formatVignetteContent(vignette.content)}
+                </div>
+            `;
+
+        // Enable chat for vignettes
+        currentVignette = vignette;
+        updateChatState();
+      }
+
+      function formatVignetteContent(content) {
+        // Convert markdown-like content to HTML with proper styling
+        return content
+          .replace(/^# (.*$)/gm, "<h1>$1</h1>")
+          .replace(/^## (.*$)/gm, "<h2>$1</h2>")
+          .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+          .replace(/\*(.*?)\*/g, "<em>$1</em>")
+          .replace(/\n\n/g, "</p><p>")
+          .replace(/^(.)/gm, "<p>$1")
+          .replace(/(.*)$/gm, "$1</p>")
+          .replace(/<p><h/g, "<h")
+          .replace(/<\/h([1-6])><\/p>/g, "</h$1>")
+          .replace(/<p><\/p>/g, "");
+      }
+
+      function updateChatState() {
+        const chatInput = document.getElementById("chatInput");
+        const sendBtn = document.getElementById("sendBtn");
+
+        if (currentVignette) {
+          chatInput.disabled = false;
+          sendBtn.disabled = false;
+          chatInput.placeholder = "Type your response to continue the story...";
+        } else {
+          chatInput.disabled = true;
+          sendBtn.disabled = true;
+          chatInput.placeholder =
+            "Select a vignette to enable interactive chat...";
+        }
+      }
+
+      async function sendChatMessage() {
+        const input = document.getElementById("chatInput");
+        const message = input.value.trim();
+
+        if (!message || !currentVignette) return;
+
+        const sendBtn = document.getElementById("sendBtn");
+        sendBtn.disabled = true;
+        sendBtn.textContent = "Generating...";
+
+        try {
+          // Simulate API call to generate interactive vignette
+          const newVignette = await generateInteractiveVignette(
+            currentVignette,
+            message
+          );
+
+          // Add to interactive vignettes list
+          interactiveVignettes.push(newVignette);
+
+          // Refresh vignette list and select the new one
+          displayVignettes();
+          selectVignette(newVignette);
+
+          // Clear input
+          input.value = "";
+        } catch (error) {
+          const display = document.getElementById("contentDisplay");
+          display.innerHTML += `<div class="error">Failed to generate interactive vignette: ${error.message}</div>`;
+        } finally {
+          sendBtn.disabled = false;
+          sendBtn.textContent = "Send";
+        }
+      }
+
+      async function generateInteractiveVignette(baseVignette, userMessage) {
+        try {
+          const response = await fetch("/api/generate-interactive", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              baseVignette: baseVignette,
+              userMessage: userMessage,
+            }),
+          });
+
+          const result = await response.json();
+
+          if (result.success) {
+            return result.data;
+          } else {
+            throw new Error(result.error);
+          }
+        } catch (error) {
+          console.error("Failed to generate interactive vignette:", error);
+          throw error;
+        }
+      }
+
+      function formatTimestamp(timestamp) {
+        return new Date(timestamp).toLocaleString();
+      }
+
+      // Initialize when page loads
+      document.addEventListener("DOMContentLoaded", init);
+    </script>
+  </body>
+</html>

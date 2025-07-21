@@ -1,0 +1,23 @@
+{
+  "interval_minutes": 20,
+  "input_folder_path": "Input/Saves",
+  "gamestate_file_path": "Input/gameState.json",
+  "crew_details_file_path": "Input/crew_details.json",
+  "vignette_themes_file_path": "Input/vignette_themes.json",
+  "combat_logs_folder_path": "Input/CombatLogs/",
+  "processing_folder_path": "Processing/",
+  "output_folder_path": "Output/Vignettes/",
+  "config_folder_path": "Config/",
+  "logs_folder_path": "Logs/",
+  "max_combat_summaries": 3,
+  "archive_retention_days": 30,
+  "llm_api_endpoint": "https://api.openai.com/v1/chat/completions",
+  "llm_api_key": "YOUR-API-KEY-HERE",
+  "llm_model_name": "gpt-4.1",
+  "llm_max_tokens_vignette": 1200,
+  "llm_max_tokens_summary": 150,
+  "llm_max_tokens_crew_update": 4000,
+  "llm_temperature": 0.7,
+  "llm_retry_attempts": 1,
+  "llm_timeout_seconds": 60
+}

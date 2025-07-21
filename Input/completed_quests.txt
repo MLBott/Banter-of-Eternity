@@ -1,0 +1,69 @@
+### This file is NOT used by the project yet
+
+New Quests
+- A Distant Light
+- Bounty - Dicila
+- Bounty - Chornu
+- Goods and Services
+- Symbols of Death
+- Terms of Trade
+- Bounty - Biakara
+- Dim Prospects
+- The Last Sanctuary
+- Bounty - Burunga
+- The Lighted Path
+- The Man of Chimes
+- A Sorcerer and a Gentleman
+- The Storms of Poko Kohara
+- Mapping the Archipelago: Tikawara
+- The Lantern of Gaun
+- The Painted Masks
+- Bounty - Dhwrgas the Ascetic
+- Bounty - Beina
+- Bekarna's Folly
+
+⚫ Completed Quests
+- To Hunt a God
+- Stranded
+- The Veins of Eora
+- An Honored Guest
+- Trade Secrets
+- Blow the Man Down
+- For the Republics!
+- The Brass Empire
+- Bounty - Radulf
+- Bounty - Assila Wave-Skipper
+- Helping Hands
+- Lost Dues in Good Faith
+- The Cornett's Call
+- Food for Thought
+- Mapping the Archipelago: Port Maje
+- The Archmage's Vault
+- Harsh Medicine
+- A Cordial Invitation
+- The Drunk Sailor
+- Iron Gut
+- Burning Bridges
+- Restoring Order
+- The Better Man
+- Basic Provisions
+- Skeleton Crew
+- Bounty - Meryel the Mad
+- The Shipwright's Plight
+- Coming to Terms
+- Bounty - Pūrākau
+- Velvet Glove, Brass Fist
+- Delver's Row
+- All Aboard
+- Bounty - Tāhae
+- Bounty - Nomu the Marauder
+
+🗂 Category Headers
+- The Hunt for Eothas
+- The Beast of Winter
+- Huana
+- Principi
+- Vailian Trading Company
+- Royal Deadfire Company
+- Quests
+- Tasks
