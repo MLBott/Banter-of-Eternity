@@ -321,6 +321,42 @@ Please respond with only the filenames that represent new in-game locations, one
                     print(f"Removed old location file: {file_path}")
                 except Exception as e:
                     print(f"Error removing file {file_path}: {e}")
+
+    def cleanup_old_saves(self, max_saves=3):
+        """Clean up old save files and processed folders to prevent storage bloat."""
+        try:
+            # Get all .zip save files and sort by modification time (newest first)
+            zip_files = list(self.saves_folder.glob("save_*.zip"))
+            zip_files.sort(key=lambda x: x.stat().st_mtime, reverse=True)
+            
+            # Remove old zip files if we exceed the limit
+            if len(zip_files) > max_saves:
+                files_to_remove = zip_files[max_saves:]
+                for file_path in files_to_remove:
+                    try:
+                        file_path.unlink()
+                        print(f"Removed old save file: {file_path.name}")
+                    except Exception as e:
+                        print(f"Error removing save file {file_path}: {e}")
+            
+            # Get all processed save folders and sort by modification time (newest first)
+            processed_folders = [p for p in self.processed_folder.iterdir() if p.is_dir()]
+            processed_folders.sort(key=lambda x: x.stat().st_mtime, reverse=True)
+            
+            # Remove old processed folders if we exceed the limit
+            if len(processed_folders) > max_saves:
+                folders_to_remove = processed_folders[max_saves:]
+                for folder_path in folders_to_remove:
+                    try:
+                        shutil.rmtree(folder_path)
+                        print(f"Removed old processed folder: {folder_path.name}")
+                    except Exception as e:
+                        print(f"Error removing processed folder {folder_path}: {e}")
+                        
+            print(f"Cleanup complete. Keeping {min(len(zip_files), max_saves)} save files and {min(len(processed_folders), max_saves)} processed folders")
+            
+        except Exception as e:
+            print(f"Error during cleanup: {e}")
     
     def update_gamestate_with_recent_locations(self, new_locations):
         """Update gameState.json with new locations in a rotating queue fashion."""
@@ -562,6 +598,9 @@ Describe the primary threats posed by the enemies (Young Drake, Xaurip Champion,
         
         # Step 9: Process combat logs if any exist
         self.process_combat_logs()
+
+        # Step 10: Clean up old saves to prevent storage bloat
+        self.cleanup_old_saves()
         
         print(f"Processing complete. Updated files list has {len(clean_list)} files")
         
