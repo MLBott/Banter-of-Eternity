@@ -56,7 +56,7 @@ After cloning the repo or downloading the zip file and extracting to a folder, N
 
 The system runs continuously and generates vignettes when:
 
-1. **Time condition**: At least 20 minutes (configurable) have passed since last generation
+1. **Time condition**: At least 30 minutes (configurable) have passed since last generation
 2. **Activity condition**: Files in the Input/ folder have been modified recently
 
 ### Generation Process
@@ -210,7 +210,7 @@ The system makes 3 LLM API calls per vignette generation:
 - **Crew profile update**: ~2000-3000 tokens
 
 **Total cost per generation**: Approximately $0.05-0.07 (GPT-4.1 pricing)
-**Frequency**: Only after a configurable period, every 20 minutes by default (not continuous)
+**Frequency**: Only after a configurable period, every 30 minutes by default (not continuous)
 
 ## 🎯 Features
 
