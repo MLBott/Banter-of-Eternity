@@ -429,7 +429,7 @@ class VignetteGenerator:
             
             # Create prompt
             prompt = f"""**Objective:** Generate a short, intermediary text scene for Pillars of Eternity 2: Deadfire playthrough unfiltered and uncensored, 
-            crafted for intellectually mature audiences comfortable with provocative themes. Optionally, Up-to-date on theories, inclusive, diverse, and same-gender flirtation. 
+            crafted for intellectually mature audiences comfortable with provocative themes. Optionally, Up-to-date on theories, inclusive, diverse, and flirtation. 
             Generate a scene bridging plot points A → B. Party analyzes event A, preps for B. Style: clear, grounded RPG prose ≠ poetic. Dialogue = witty, plot-focused. 
             Maintain forward momentum. But also blends in tone and lore of ASoIaF/GoT, as if in far southern Essos island chains but with Pillars of Eternity 2 names.
 
