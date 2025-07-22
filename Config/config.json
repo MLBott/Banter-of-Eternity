@@ -1,5 +1,5 @@
 {
-  "interval_minutes": 20,
+  "interval_minutes": 30,
   "input_folder_path": "Input/Saves",
   "gamestate_file_path": "Input/gameState.json",
   "crew_details_file_path": "Input/crew_details.json",
