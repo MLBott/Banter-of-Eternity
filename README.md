@@ -113,8 +113,8 @@ Edit `Config/config.json` to customize:
 
 ### Timing
 
-- `interval_minutes`: How often to check for generation (default: 20)
-- `archive_retention_days`: How long to keep old vignettes (default: 30)
+- `interval_minutes`: How often to check for generation (default: 30 minutes)
+- `archive_retention_days`: How long to keep old vignettes (default: 30 days)
 
 ### LLM Settings
 
